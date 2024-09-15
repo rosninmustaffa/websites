@@ -1,0 +1,13 @@
+services:
+  esigned:
+    image: httpd:2.4
+    container_name: esigned
+    volumes:
+      - "./esigned-html/esigned:/usr/local/apache2/htdocs/"
+    ports:
+      - "8080:80"
+  namari:
+    build: ./Namari-html
+    container_name: namari
+    ports:
+      - "8081:80"
